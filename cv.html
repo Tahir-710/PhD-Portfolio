@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV — Tahir Sajjad Butt</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="CV — Tahir Sajjad Butt">
+<meta property="og:description" content="The CV of Tahir Sajjad Butt, experimental physicist: M.S. Physics (LUMS), B.S. Physics (UMT), device research at the FMOD Lab, two 2025 peer-reviewed papers and teaching. View it online or as a PDF.">
+<meta name="description" content="The CV of Tahir Sajjad Butt, experimental physicist: M.S. Physics (LUMS), B.S. Physics (UMT), device research at the FMOD Lab, two 2025 peer-reviewed papers and teaching. View it online or as a PDF.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20100%20100%27%3E%3Crect%20width%3D%27100%27%20height%3D%27100%27%20rx%3D%2722%27%20fill%3D%27%231B2430%27%2F%3E%3Cpath%20d%3D%27M50%2016v68M22%2032l56%2036M78%2032L22%2068%27%20stroke%3D%27%23D7E6E3%27%20stroke-width%3D%277%27%20stroke-linecap%3D%27round%27%2F%3E%3C%2Fsvg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F6F3EC;--paper-2:#EFEADD;--ink:#1B2430;--ink-soft:#3A4351;
+  --gold:#B8801F;--gold-soft:#E9C88A;--teal:#2B6E6B;--teal-soft:#D7E6E3;
+  --stone:#6B665B;--line:rgba(27,36,48,.12);--card:#fff;--radius:18px;
+}
+*{box-sizing:border-box;}html,body{margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--paper);color:var(--ink);font-family:"IBM Plex Sans",-apple-system,sans-serif;line-height:1.55;overflow-x:hidden;}
+a{color:inherit;text-decoration:none;}img{max-width:100%;display:block;}
+.wrap{max-width:1120px;margin:0 auto;padding:0 28px;}
+sub,sup{font-size:.72em;}
+
+/* ── NAV ── */
+header{position:sticky;top:0;z-index:30;padding:14px 0;background:linear-gradient(to bottom,var(--paper) 72%,transparent);}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;
+  background:var(--card);border:1px solid var(--line);border-radius:999px;padding:9px 12px 9px 18px;}
+.brand{display:flex;align-items:center;gap:10px;font-family:"Fraunces",serif;font-weight:600;font-size:16px;white-space:nowrap;}
+.brand-mark{width:32px;height:32px;border-radius:9px;flex-shrink:0;
+  background:linear-gradient(135deg,var(--teal),var(--ink));display:flex;align-items:center;justify-content:center;}
+.nav-links{display:flex;gap:2px;list-style:none;margin:0;padding:0;}
+.nav-links a{display:block;padding:8px 13px;border-radius:999px;font-size:13.5px;font-weight:500;
+  color:var(--ink-soft);transition:background .14s,color .14s;}
+.nav-links a:hover{background:var(--paper-2);color:var(--ink);}
+.nav-links a.active{background:var(--ink);color:var(--paper);}
+.nav-icons{display:flex;gap:7px;}
+.icon-btn{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;
+  justify-content:center;background:var(--paper-2);border:1px solid var(--line);}
+.icon-btn:hover{background:var(--teal-soft);}
+
+/* HAMBURGER for mobile */
+.hamburger{display:none;flex-direction:column;width:36px;height:36px;border-radius:50%;align-items:center;
+  justify-content:center;background:var(--paper-2);border:1px solid var(--line);cursor:pointer;flex-shrink:0;}
+.hamburger span{display:block;width:16px;height:1.5px;background:var(--ink);
+  margin:3px auto;transition:transform .2s,opacity .2s;}
+.hamburger.open span:nth-child(1){transform:translateY(4.5px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:translateY(-4.5px) rotate(-45deg);}
+.mobile-menu{display:none;position:fixed;inset:0;z-index:29;background:rgba(27,36,48,.55);backdrop-filter:blur(3px);}
+.mobile-menu.open{display:block;}
+.mobile-menu-panel{position:absolute;top:72px;left:14px;right:14px;background:var(--card);
+  border:1px solid var(--line);border-radius:20px;padding:8px;box-shadow:0 16px 48px -18px rgba(27,36,48,.4);}
+.mobile-menu-panel a{display:block;padding:13px 18px;border-radius:12px;font-size:15px;
+  font-weight:500;color:var(--ink-soft);transition:background .12s;}
+.mobile-menu-panel a:hover,.mobile-menu-panel a.active{background:var(--paper-2);color:var(--ink);}
+@media(max-width:820px){.nav-links{display:none;}.hamburger{display:flex;}}
+
+/* ── BUTTONS ── */
+.btn{display:inline-flex;align-items:center;gap:7px;padding:11px 22px;border-radius:999px;
+  font-size:15px;font-weight:600;border:1.5px solid transparent;cursor:pointer;font-family:inherit;text-decoration:none;}
+.btn-dark{background:var(--ink);color:var(--paper);}
+.btn-dark:hover{background:var(--teal);}
+.btn-out{background:var(--card);color:var(--ink);border-color:var(--line);}
+.btn-out:hover{background:var(--paper-2);}
+.btn-gold{background:var(--gold-soft);color:#3A2A08;}
+.btn-gold:hover{background:#F2D9A8;}
+
+/* ── LABELS / HEADINGS ── */
+.sec-label{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.06em;color:var(--teal);margin:0 0 10px;font-weight:600;display:block;}
+.sec-head{font-family:"Fraunces",serif;font-weight:500;font-size:clamp(28px,3.6vw,42px);margin:0 0 14px;line-height:1.12;}
+.sec-dek{color:var(--ink-soft);font-size:15.5px;margin:0 0 40px;line-height:1.65;}
+
+/* ── BACK LINK ── */
+.back-link{display:inline-flex;align-items:center;gap:8px;font-size:14px;color:var(--stone);
+  padding:9px 18px;background:var(--card);border:1.5px solid var(--line);border-radius:999px;
+  margin-bottom:36px;font-weight:500;transition:color .14s,border-color .14s,background .14s;}
+.back-link:hover{color:var(--teal);border-color:var(--teal);background:var(--teal-soft);}
+
+/* ── LIGHTBOX ── */
+.lightbox{position:fixed;inset:0;z-index:100;background:rgba(14,19,26,.95);
+  display:none;align-items:center;justify-content:center;padding:28px;}
+.lightbox.open{display:flex;}
+.lb-stage{max-width:1020px;width:100%;display:flex;flex-direction:column;gap:14px;align-items:center;}
+.lb-visual{background:#fff;border-radius:12px;overflow:hidden;max-height:65vh;
+  display:flex;align-items:center;justify-content:center;width:100%;cursor:zoom-in;}
+.lb-visual img{max-height:65vh;width:auto;max-width:100%;object-fit:contain;transition:transform .2s ease;padding:10px;}
+.lb-visual.zoomed{overflow:auto;cursor:zoom-out;}
+.lb-visual.zoomed img{transform:scale(2.1);padding:0;}
+.lb-cap{color:#DDE3EA;font-size:14px;text-align:center;max-width:700px;}
+.lb-cap b{display:block;font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--gold-soft);font-weight:500;margin-bottom:4px;}
+.lb-cap i{display:block;font-style:normal;font-size:11.5px;color:#6D7B8A;margin-top:6px;}
+.lb-bar{display:flex;align-items:center;gap:14px;}
+.lb-btn{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.18);color:#fff;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;font-size:17px;font-family:inherit;}
+.lb-btn:hover{background:rgba(255,255,255,.2);}
+.lb-count{font-family:"IBM Plex Mono",monospace;font-size:12px;color:#9AA6B4;min-width:50px;text-align:center;}
+.lb-close{position:absolute;top:20px;right:24px;}
+.lb-tip{font-size:11.5px;color:#6D7B8A;font-family:"IBM Plex Mono",monospace;text-align:center;}
+
+/* ── FIGURES ── */
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:16px;}
+.fig-wide{grid-column:span 2;}
+@media(max-width:600px){.fig-wide{grid-column:span 1;}}
+.fig{margin:0;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  cursor:zoom-in;display:flex;flex-direction:column;font-family:inherit;padding:0;
+  transition:border-color .14s,box-shadow .14s;width:100%;}
+.fig:hover{border-color:var(--teal);box-shadow:0 8px 22px -16px rgba(27,36,48,.4);}
+.fig-visual{position:relative;width:100%;aspect-ratio:4/3;background:#f8f7f4;
+  overflow:hidden;display:flex;align-items:center;justify-content:center;}
+.fig-visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;padding:10px;}
+.fig-zoom{position:absolute;right:8px;bottom:8px;width:26px;height:26px;border-radius:50%;
+  background:rgba(255,255,255,.94);border:1px solid var(--line);
+  display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .14s;}
+.fig:hover .fig-zoom{opacity:1;}
+.fig-cap{padding:11px 13px 13px;font-size:12.5px;color:var(--ink-soft);line-height:1.45;text-align:left;}
+.fig-cap b{display:block;font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:var(--stone);font-weight:500;margin-bottom:3px;letter-spacing:.03em;}
+
+/* ── STAT STRIP ── */
+.stat-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:28px 0 36px;}
+@media(max-width:860px){.stat-strip{grid-template-columns:repeat(2,1fr);}}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 15px;}
+.stat .v{font-family:"Fraunces",serif;font-weight:600;font-size:18px;color:var(--ink);line-height:1.15;margin-bottom:5px;}
+.stat .k{font-size:12px;color:var(--stone);line-height:1.4;}
+
+/* ── TWO COL ── */
+.rs-cols{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin:24px 0 28px;}
+@media(max-width:800px){.rs-cols{grid-template-columns:1fr;}}
+.rs-col h4{font-size:12px;font-weight:600;letter-spacing:.055em;color:var(--teal);margin:0 0 10px;text-transform:uppercase;}
+.rs-col p{font-size:14.8px;color:var(--ink-soft);margin:0 0 10px;line-height:1.65;}
+.solo{display:inline-flex;align-items:center;gap:4px;font-family:"IBM Plex Mono",monospace;
+  font-size:10px;letter-spacing:.04em;color:var(--gold);
+  background:rgba(184,128,31,.08);border:1px solid rgba(184,128,31,.22);
+  border-radius:999px;padding:2px 8px;vertical-align:middle;white-space:nowrap;}
+
+/* ── FOOTER ── */
+footer{padding:40px 0 56px;border-top:1px solid var(--line);margin-top:48px;}
+.footer-inner{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:28px;}
+.footer-brand{font-family:"Fraunces",serif;font-weight:600;font-size:15px;margin:0 0 6px;}
+.footer-sub{font-size:13px;color:var(--stone);max-width:280px;line-height:1.5;}
+.footer-cols{display:flex;gap:48px;flex-wrap:wrap;}
+.footer-col p{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.06em;color:var(--teal);font-weight:600;margin:0 0 10px;text-transform:uppercase;}
+.footer-col a{display:block;font-size:13.5px;color:var(--ink-soft);margin-bottom:7px;}
+.footer-col a:hover{color:var(--teal);}
+.footer-copy{margin-top:36px;padding-top:20px;border-top:1px solid var(--line);font-size:12px;color:var(--stone);}
+
+/* ── DOI LINK ── */
+.doi-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;
+  color:var(--teal);border-bottom:1px solid var(--teal-soft);padding-bottom:2px;margin-top:8px;}
+.doi-link:hover{border-bottom-color:var(--teal);}
+.fig-src-note{margin-top:16px;font-size:12px;color:var(--stone);line-height:1.6;}
+
+/* ── RS BADGE ── */
+.rs-badge{display:inline-flex;align-items:center;gap:7px;padding:5px 12px;border-radius:999px;
+  background:var(--teal-soft);border:1px solid rgba(43,110,107,.2);
+  font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.04em;color:var(--teal);font-weight:600;margin-bottom:14px;}
+.rs-title{font-family:"Fraunces",serif;font-weight:600;font-size:clamp(24px,3.2vw,36px);margin:0 0 10px;line-height:1.18;max-width:820px;}
+.rs-meta{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--stone);margin:0 0 28px;line-height:1.8;}
+.gallery-label{font-size:12px;font-weight:600;letter-spacing:.055em;color:var(--teal);margin:0 0 4px;text-transform:uppercase;}
+
+/* proj nav */
+.proj-nav{display:flex;justify-content:space-between;margin-top:52px;padding-top:28px;border-top:1px solid var(--line);}
+.proj-nav-btn{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:999px;
+  background:var(--card);border:1px solid var(--line);font-size:14px;font-weight:500;color:var(--ink-soft);
+  transition:border-color .14s,color .14s,background .14s;}
+.proj-nav-btn:hover{border-color:var(--teal);color:var(--teal);background:var(--teal-soft);}
+
+:focus-visible{outline:2px solid var(--teal);outline-offset:2px;}
+</style>
+<style>
+.cv-dl-bar{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px 26px;display:flex;align-items:center;justify-content:space-between;gap:16px;
+  flex-wrap:wrap;margin-bottom:32px;}
+.cv-dl-bar p{font-size:14.5px;color:var(--ink-soft);margin:0;}
+.cv-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+@media(max-width:860px){.cv-grid{grid-template-columns:1fr;}}
+.cv-block{margin-bottom:30px;}
+.cv-bt{font-family:"IBM Plex Mono",monospace;font-size:10.5px;font-weight:600;letter-spacing:.06em;
+  color:var(--teal);text-transform:uppercase;margin:0 0 12px;padding-bottom:8px;border-bottom:1px solid var(--line);}
+.cv-entry{padding:13px 0;border-bottom:1px solid var(--line);}
+.cv-entry:last-child{border-bottom:none;}
+.cv-eh{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:3px;}
+.cv-entry h4{font-family:"Fraunces",serif;font-size:15.5px;font-weight:600;margin:0;}
+.cv-dt{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--stone);white-space:nowrap;}
+.cv-where{font-size:13px;color:var(--teal);margin:3px 0 6px;}
+.cv-entry ul{margin:0;padding-left:16px;color:var(--ink-soft);font-size:13.5px;line-height:1.65;}
+.cgpa{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--stone);margin:3px 0;}
+.cv-entry p{font-size:13.5px;color:var(--ink-soft);margin:0;line-height:1.6;}
+
+/* skills grouped */
+.skill-groups{display:flex;flex-direction:column;gap:14px;}
+.skill-group{}
+.sg-label{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.05em;color:var(--stone);
+  font-weight:600;text-transform:uppercase;margin:0 0 7px;}
+.pills{display:flex;flex-wrap:wrap;gap:6px;}
+.pill{font-size:12px;background:var(--paper-2);border:1px solid var(--line);
+  border-radius:999px;padding:4px 11px;color:var(--ink-soft);}
+.pill.hi{background:var(--teal-soft);border-color:rgba(43,110,107,.25);color:#1A4A47;font-weight:500;}
+.cv-interests{font-size:15.5px;color:var(--ink-soft);line-height:1.65;max-width:860px;margin:0 0 28px;}
+.cv-interests b{color:var(--ink);}
+.cv-pub h4{font-size:14.5px;line-height:1.35;margin:4px 0 2px;}
+.cv-pub-a{font-size:12.5px !important;color:var(--stone) !important;}
+.cv-pub-n{font-family:"IBM Plex Mono",monospace;color:var(--gold);font-weight:600;margin-right:4px;}
+.cv-entry i{font-style:italic;}
+.cv-pages{display:flex;flex-direction:column;align-items:center;gap:22px;margin-top:8px;}
+.cv-pages img{width:100%;max-width:880px;height:auto;background:#fff;border:1px solid var(--line);border-radius:6px;box-shadow:0 18px 44px -30px rgba(27,36,48,.45);}
+.cv-doc{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:34px 38px 14px;max-width:900px;}
+@media(max-width:640px){.cv-doc{padding:22px 18px 6px;}}
+.cv-head{margin-bottom:26px;padding-bottom:18px;border-bottom:2px solid var(--ink);}
+.cv-head h2{font-family:"Fraunces",serif;font-weight:600;font-size:30px;margin:0 0 6px;line-height:1.1;}
+.cv-head p{margin:0;font-size:13.5px;color:var(--ink-soft);}
+.cv-head a{color:var(--teal);text-decoration:underline;}
+.cv-doc .cv-entry li{margin-bottom:5px;}
+.cv-skill{display:grid;grid-template-columns:130px 1fr;gap:12px;padding:6px 0;font-size:13.5px;line-height:1.6;}
+.cv-sk{font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;letter-spacing:.04em;color:var(--stone);text-transform:uppercase;padding-top:2px;}
+.cv-sv{color:var(--ink-soft);}
+@media(max-width:640px){.cv-skill{grid-template-columns:1fr;gap:2px;}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="nav-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none">
+            <path d="M12 2v20M4 7l16 10M20 7L4 17" stroke="#F6F3EC" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </span>
+        Tahir Sajjad Butt
+      </a>
+      <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="research.html">Research</a></li><li><a href="setup.html">Setup</a></li><li><a href="publications.html">Publications</a></li><li><a href="cv.html" class="active">CV</a></li><li><a href="contact.html">Contact</a></li></ul>
+      <div style="display:flex;gap:7px;align-items:center;">
+        <a class="icon-btn" href="mailto:tahirsajjadbutt10@gmail.com" aria-label="Email">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M3 6l9 6 9-6M4 5h16a1 1 0 011 1v12a1 1 0 01-1 1H4a1 1 0 01-1-1V6a1 1 0 011-1z" stroke="#1B2430" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="icon-btn" href="http://www.linkedin.com/in/tahir-sajjad-butt-a8b384249" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#1B2430"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.76-2.05C20.4 8.65 21 11 21 14.1V21h-4v-6.1c0-1.45-.03-3.32-2.02-3.32-2.02 0-2.33 1.58-2.33 3.21V21H9z"/></svg>
+        </a>
+        <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-panel"><a href="index.html">Home</a><a href="research.html">Research</a><a href="setup.html">Setup</a><a href="publications.html">Publications</a><a href="cv.html" class="active">CV</a><a href="contact.html">Contact</a></div>
+  </div>
+</header>
+<main>
+<div class="wrap" style="padding-top:56px;padding-bottom:88px;">
+  <span class="sec-label">Curriculum Vitae</span>
+  <h1 class="sec-head">My CV</h1>
+  <p class="sec-dek" style="max-width:680px;margin-bottom:22px;">The full CV is written out below, section by section, so you can read it on this page. If you prefer the original layout, open the PDF. My phone number and the names of my referees are left out of this public copy; both are available on request.</p>
+  <div class="cv-dl-bar">
+    <p>Three pages &middot; PDF &middot; last updated October 2026</p>
+    <a class="btn btn-dark" href="CV_Tahir_Sajjad_Butt.pdf" target="_blank" rel="noopener">Open the PDF &#8599;</a>
+  </div>
+  <div class="cv-doc">
+<div class="cv-head">
+<h2>Tahir Sajjad Butt</h2>
+<p>Lahore, Pakistan &middot; <a href="mailto:tahirsajjadbutt10@gmail.com">tahirsajjadbutt10@gmail.com</a> &middot; <a href="http://www.linkedin.com/in/tahir-sajjad-butt-a8b384249" target="_blank" rel="noopener">LinkedIn &#8599;</a> &middot; <a href="https://github.com/Tahir-710/Quantum-Key-Distribution-QKD-" target="_blank" rel="noopener">GitHub &#8599;</a></p>
+</div>
+<div class="cv-block">
+<p class="cv-bt">Education</p>
+<div class="cv-entry">
+<div class="cv-eh"><h4>Lahore University of Management Sciences (LUMS)</h4><span class="cv-dt">Sep 2022 &ndash; June 2024</span></div>
+<p class="cv-where">School of Science and Engineering (SSE), Lahore, Pakistan &middot; <i>MS Physics</i></p>
+<ul><li><b>CGPA:</b> 3.56/4.00</li><li><b>Relevant coursework:</b> Quantum Mechanics, Electrodynamics, Condensed Matter Physics, Advanced Statistical Mechanics, Photovoltaic Devices, Computational Physics, and Quantum Information Science &amp; Technology.</li></ul>
+</div>
+<div class="cv-entry">
+<div class="cv-eh"><h4>University of Management and Technology (UMT)</h4><span class="cv-dt">Oct 2018 &ndash; July 2022</span></div>
+<p class="cv-where">School of Sciences, Lahore, Pakistan &middot; <i>BS (Hons) in Physics</i></p>
+<ul><li><b>CGPA:</b> 3.29/4.00</li><li><b>Relevant coursework:</b> Classical Mechanics, Quantum Mechanics, Electromagnetic Theory, Thermal and Statistical Physics, Nuclear Physics, Digital Electronics, Solid State Physics, Laser Physics and Nanotechnology.</li></ul>
+</div>
+</div>
+<div class="cv-block">
+<p class="cv-bt">Journal Publications</p>
+<div class="cv-entry cv-pub">
+<p class="cv-pub-a"><span class="cv-pub-n">[1]</span> Iqbal, S., Akbar, F., Salar, M. A., <b>Butt, T. S.</b>, Khan, A. A., Sohail, M., &amp; Yameen, B. (2025).</p>
+<h4>Demonstrating donor&ndash;acceptor covalent conjugate of polythiophene and perylene diimide as an all-organic photocatalyst for enhanced light-driven H<sub>2</sub>O<sub>2</sub> production</h4>
+<p class="cv-where"><i>ACS Applied Materials &amp; Interfaces</i>, 17(19), 28609&ndash;28621</p>
+<p><b>Contribution:</b> fabricated the P3HT, P3HT-PDI-PH, and PTh-PDI-DCP photodetectors; built the chopped-light optical setup; measured and analyzed transient photocurrent, including rise and fall times (Fig. 3).</p>
+<a class="doi-link" href="https://doi.org/10.1021/acsami.4c22745" target="_blank" rel="noopener">10.1021/acsami.4c22745 &#8599;</a>
+</div>
+<div class="cv-entry cv-pub">
+<p class="cv-pub-a"><span class="cv-pub-n">[2]</span> Jawad, M., Siddique, S., Aslam, Z., Hussain, S., <b>Butt, T. S.</b>, Saeed, F., Ain, Q. U., Ulhaq, A., &amp; Khan, A. A. (2025).</p>
+<h4>Temperature-dependent photoluminescence and grain size control in a prototypical lead-free bismuth halide perovskite</h4>
+<p class="cv-where"><i>Advanced Engineering Materials</i>, 27(5), 2402009</p>
+<p><b>Contribution:</b> fabricated MA<sub>3</sub>Bi<sub>2</sub>I<sub>9</sub> thin films with anti-solvent grain-size control (Fig. 2, Table 1); fabricated photodetectors and measured their photocurrent response (Fig. S2, Supporting Information).</p>
+<a class="doi-link" href="https://doi.org/10.1002/adem.202402009" target="_blank" rel="noopener">10.1002/adem.202402009 &#8599;</a>
+</div>
+</div>
+<div class="cv-block">
+<p class="cv-bt">Research Experience</p>
+<div class="cv-entry">
+<div class="cv-eh"><h4>Research Assistant</h4><span class="cv-dt">May 2024 &ndash; Aug 2026</span></div>
+<p class="cv-where"><a href="https://web.lums.edu.pk/~fmod/index.php/faculty/" target="_blank" rel="noopener" style="color:var(--teal);text-decoration:underline;">Functional Materials and Optoelectronic Devices (FMOD) Lab</a>, LUMS, Lahore, Pakistan</p>
+<ul><li><b>Supervisor:</b> Dr. Ammar Ahmed Khan</li><li><b>Project:</b> Fabrication and Time-Dependent Analysis of Polymer Photodetectors</li><li><b>Fabrication:</b> Fabricated mesoscopic photodetectors (FTO/compact TiO<sub>2</sub>/mesoporous TiO<sub>2</sub>/polymer/Cr-Au) by spin coating, using P3HT, the P3HT&ndash;PDI physical hybrid (P3HT-PDI-PH), or the covalent donor&ndash;acceptor conjugate PTh-PDI-DCP as the active layer; deposited Cr-Au contacts by thermal evaporation.</li><li><b>Characterization:</b> Measured transient photocurrent under 0.33 Hz chopped light at 0 V bias with a transimpedance amplifier; extracted 10&ndash;90% rise and fall times by curve fitting.</li><li><b>Results:</b> PTh-PDI-DCP gave the shortest rise time (109 &plusmn; 3 ms), compared with P3HT-PDI-PH (133 &plusmn; 2 ms) and P3HT (172 &plusmn; 37 ms), while fall times did not show this speed-up; the fall times of PTh-PDI-DCP and P3HT-PDI-PH were longer than their rise times. The paper hypothesizes that the covalent bridge speeds charge transport from donor to acceptor, giving faster injection into the TiO<sub>2</sub> scaffold. Published in [1] (Fig. 3).</li></ul>
+</div>
+<div class="cv-entry">
+<div class="cv-eh"><h4>Graduate Research (MS Thesis)</h4><span class="cv-dt">June 2023 &ndash; May 2024</span></div>
+<p class="cv-where"><a href="https://web.lums.edu.pk/~fmod/index.php/faculty/" target="_blank" rel="noopener" style="color:var(--teal);text-decoration:underline;">Functional Materials and Optoelectronic Devices (FMOD) Lab</a>, LUMS, Lahore, Pakistan</p>
+<ul><li><b>Supervisor:</b> Dr. Ammar Ahmed Khan</li><li><b>Title:</b> A Photodetector Based on Lead-Free Perovskite-like Methylammonium Bismuth Iodide (MBI)</li><li><b>Fabrication:</b> With a team, grew MA<sub>3</sub>Bi<sub>2</sub>I<sub>9</sub> (MBI) thin films by one-step spin coating from a methylammonium iodide/bismuth iodide precursor, varying the chlorobenzene anti-solvent from 20 to 175 &micro;L&middot;cm<sup>&minus;2</sup> to control nucleation. Independently fabricated mesoscopic photodetectors (FTO/compact TiO<sub>2</sub>/mesoporous TiO<sub>2</sub>/MBI/Cr-Au) at 90, 60, and 45 &micro;L&middot;cm<sup>&minus;2</sup>.</li><li><b>Characterization:</b> Analyzed SEM and XRD data to confirm the hexagonal MBI phase (space group P6<sub>3</sub>/mmc) and quantify grain-size trends; designed the photodetector test assembly and measured device response under chopped white light (0 V bias, transimpedance-amplifier readout).</li><li><b>Results:</b> The amount of anti-solvent tuned the average grain size by about 26-fold (1.40 &plusmn; 0.03 to 36 &plusmn; 1 &micro;m). Device performance peaked at the intermediate anti-solvent concentration: reducing the anti-solvent from 90 to 60 &micro;L&middot;cm<sup>&minus;2</sup> raised peak photocurrent from about 2.6 to 7 &micro;A&middot;cm<sup>&minus;2</sup> and gave the fastest rise time (0.35 s), while 45 &micro;L&middot;cm<sup>&minus;2</sup> lowered photocurrent, attributed to larger but more sparsely spread grains. Published in [2] (Fig. 2, Table 1, and Fig. S2).</li></ul>
+</div>
+<div class="cv-entry">
+<div class="cv-eh"><h4>Bachelor&rsquo;s Thesis Research (external thesis placement)</h4><span class="cv-dt">July 2021 &ndash; June 2022</span></div>
+<p class="cv-where">Physical Vapor Deposition Lab, Center for Advanced Studies in Physics (CASP), Government College University (GCU), Lahore, Pakistan</p>
+<ul><li><b>Supervisor:</b> Hira Yaseen</li><li><b>Title:</b> Influence of Repetition Rate on the Growth of MgO Thin Film by Pulsed Laser Deposition Technique</li><li><b>Fabrication:</b> Operated a Q-switched Nd:YAG pulsed laser deposition system (1064 nm, 200 mJ pulse energy, 10 ns pulse width) to grow MgO thin films on silicon substrates under vacuum (10<sup>&minus;3</sup> Torr), varying the laser repetition rate (2, 3, 4, and 5 Hz), with 2000 to 5000 total laser shots.</li><li><b>Characterization:</b> Analyzed XRD, SEM, and AFM data to determine film thickness, crystallite size (Scherrer method), and grain morphology at each repetition rate.</li><li><b>Results:</b> Film thickness rose from 307 nm (2000 shots) to 960 nm (5000 shots), while crystallite size fell from 65 to 15 nm.</li></ul>
+</div>
+</div>
+<div class="cv-block">
+<p class="cv-bt">Academic Projects</p>
+<div class="cv-entry">
+<div class="cv-eh"><h4>Device Simulation of a Lead-Free MBI Solar Cell (TCAD Silvaco)</h4><span class="cv-dt">Jan 2024 &ndash; April 2024</span></div>
+<p class="cv-where"><i>Coursework project</i></p>
+<ul><li><b>Design:</b> Built an n-i-p MA<sub>3</sub>Bi<sub>2</sub>I<sub>9</sub> (MBI) solar-cell model in TCAD Silvaco, defining the layer stack, material parameters, mesh, and boundary conditions.</li><li><b>Simulation:</b> Simulated photogeneration and recombination-rate profiles, quantum efficiency, and J&ndash;V characteristics under different illumination conditions; extracted V<sub>OC</sub>, J<sub>SC</sub>, V<sub>mp</sub>, J<sub>mp</sub>, fill factor (FF), and power conversion efficiency (PCE).</li></ul>
+</div>
+<div class="cv-entry">
+<div class="cv-eh"><h4>Quantum Key Distribution: BB84 and B92 Protocols</h4><span class="cv-dt">Jan 2023 &ndash; May 2023</span></div>
+<p class="cv-where"><i>Coursework project</i> &middot; <a href="https://github.com/Tahir-710/Quantum-Key-Distribution-QKD-" target="_blank" rel="noopener" style="color:var(--teal);text-decoration:underline;">GitHub &#8599;</a></p>
+<ul><li><b>Implementation:</b> Implemented the BB84 and B92 quantum key distribution protocols in Python with Qiskit on the Aer simulator, including an eavesdropper (Eve) model showing that interception is detectable.</li><li><b>Analysis:</b> Wrote a report analyzing both protocols, with histogram visualizations of the simulated key exchange.</li></ul>
+</div>
+</div>
+<div class="cv-block">
+<p class="cv-bt">Teaching Experience</p>
+<div class="cv-entry">
+<div class="cv-eh"><h4>School of Advanced and Global Education (SAGE)</h4><span class="cv-dt">Aug 2026 &ndash; Present</span></div>
+<p class="cv-where">Lahore, Pakistan &middot; <i>STEM Lab Developer &amp; Instructor</i></p>
+<ul><li><b>Curriculum design:</b> Designing an interdisciplinary STEM curriculum for Grades 6&ndash;8 built around three modules (Pipes &amp; Systems, Power &amp; Purpose, and Wheels &amp; Mobility) that turn core physics and engineering concepts into hands-on, age-appropriate activities.</li><li><b>Laboratory setup:</b> Setting up the program&rsquo;s teaching laboratory from scratch, including equipment selection, procurement, and experimental stations, so that students learn engineering concepts through direct experimentation.</li><li><b>Program development:</b> Introducing project and experiment-based learning through original hands-on activities in which students design, build, test, and troubleshoot.</li></ul>
+</div>
+<div class="cv-entry">
+<div class="cv-eh"><h4>IB Prep Academy</h4><span class="cv-dt">Aug 2025 &ndash; Present</span></div>
+<p class="cv-where">Lahore, Pakistan &middot; <i>MYP &amp; DP Physics Instructor (Part Time)</i></p>
+<ul><li><b>Physics teaching:</b> Teaching IB Physics to MYP 4&ndash;5 and DP 1&ndash;2 students following the IB curriculum at IB Prep Academy.</li><li><b>Teaching methodology:</b> Focusing instruction on conceptual clarity and exam technique, tailoring approach to each student&rsquo;s problem-solving gaps rather than rote content delivery.</li></ul>
+</div>
+</div>
+<div class="cv-block">
+<p class="cv-bt">Technical Skills</p>
+<div class="cv-entry">
+<div class="cv-skill"><span class="cv-sk">Fabrication</span><span class="cv-sv">Spin coating, anti-solvent crystallization, pulsed laser deposition (PLD), thermal evaporation of metal contacts, plasma cleaning</span></div>
+<div class="cv-skill"><span class="cv-sk">Characterization</span><span class="cv-sv">I&ndash;V measurements, transient photocurrent (chopped light, transimpedance amplifier), photodetector test-assembly design, digital storage oscilloscope, source meter, PhysLogger (data logger); XRD, SEM, AFM, and UV-Vis data analysis</span></div>
+<div class="cv-skill"><span class="cv-sk">Simulation</span><span class="cv-sv">TCAD Silvaco, SCAPS-1D</span></div>
+<div class="cv-skill"><span class="cv-sk">Programming</span><span class="cv-sv">Python (NumPy, Pandas, Matplotlib, Seaborn), Qiskit, MATLAB, Mathematica</span></div>
+<div class="cv-skill"><span class="cv-sk">Tools</span><span class="cv-sv">LaTeX, MS Office, Origin (OriginLab)</span></div>
+</div>
+</div>
+<div class="cv-block">
+<p class="cv-bt">Awards and Honors</p>
+<div class="cv-entry">
+<div class="cv-eh"><h4>Dean&rsquo;s Merit Award, UMT</h4><span class="cv-dt">Oct 2021 &ndash; June 2022</span></div>
+<ul><li>Awarded in two semesters of the 2021&ndash;22 academic year for a semester GPA of 3.80/4.00 or higher.</li></ul>
+</div>
+</div>
+<div class="cv-block">
+<p class="cv-bt">Leadership and Outreach</p>
+<div class="cv-entry">
+<div class="cv-eh"><h4>Vice President, SPIE Student Chapter, LUMS</h4><span class="cv-dt">June 2023 &ndash; Dec 2024</span></div>
+<ul><li>Organized interactive optics and light-physics demonstrations at local schools, bringing hands-on science outreach to young and underprivileged students.</li><li>Helped run chapter activities in optics and quantum science, including initiatives that built student engagement with computational and quantum optics at LUMS.</li></ul>
+</div>
+<div class="cv-entry">
+<div class="cv-eh"><h4>Vice President, Ibn-Al-Haytham Physics Society (IPS), UMT</h4><span class="cv-dt">July 2021 &ndash; Aug 2022</span></div>
+<ul><li>Organized seminars and workshops for physics students at UMT.</li></ul>
+</div>
+</div>
+  </div>
+</div></main>
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <div>
+        <p class="footer-brand">Tahir Sajjad Butt</p>
+        <p class="footer-sub">Experimental physicist interested in device physics, optoelectronics, quantum materials and energy storage. Applying to Ph.D. programs for Fall 2027.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <p>Pages</p>
+          <a href="index.html">Home</a>
+          <a href="research.html">Research</a>
+          <a href="setup.html">Setup</a>
+          <a href="publications.html">Publications</a>
+          <a href="cv.html">CV</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <p>Connect</p>
+          <a href="mailto:tahirsajjadbutt10@gmail.com">Email</a>
+          <a href="CV_Tahir_Sajjad_Butt.pdf" target="_blank" rel="noopener">CV (PDF) &#8599;</a>
+          <a href="http://www.linkedin.com/in/tahir-sajjad-butt-a8b384249" target="_blank" rel="noopener">LinkedIn &#8599;</a>
+          <a href="https://github.com/Tahir-710/Quantum-Key-Distribution-QKD-" target="_blank" rel="noopener">GitHub &#8599;</a>
+          <a href="https://web.lums.edu.pk/~fmod/index.php/faculty/" target="_blank" rel="noopener">FMOD Lab &#8599;</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copy">&copy; 2026 Tahir Sajjad Butt &middot; Lahore, Pakistan</div>
+  </div>
+</footer>
+
+
+<script>
+(function(){
+  var btn=document.getElementById('hamburgerBtn');
+  var menu=document.getElementById('mobileMenu');
+  if(!btn||!menu)return;
+  btn.addEventListener('click',function(){
+    var open=menu.classList.toggle('open');
+    btn.classList.toggle('open',open);btn.setAttribute('aria-expanded',open?'true':'false');
+    document.body.style.overflow=open?'hidden':'';
+  });
+  menu.addEventListener('click',function(e){
+    if(e.target===menu){menu.classList.remove('open');btn.classList.remove('open');document.body.style.overflow='';}
+  });
+})();
+</script>
+
+</body>
+</html>
