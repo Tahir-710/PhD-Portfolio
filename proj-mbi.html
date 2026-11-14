@@ -42,6 +42,7 @@ header{position:sticky;top:0;z-index:30;padding:14px 0;background:linear-gradien
 .icon-btn{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;
   justify-content:center;background:var(--paper-2);border:1px solid var(--line);}
 .icon-btn:hover{background:var(--teal-soft);}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:url(bg-art.svg) center/cover no-repeat;opacity:.34;}
 .cv-btn{font-size:12px;font-weight:600;letter-spacing:.02em;color:var(--ink);}
 @media(max-width:520px){.nav-inner .icon-btn:not(.cv-btn){display:none;}.nav-inner{padding-left:14px;}}
 
@@ -294,7 +295,7 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);margin-top:48px;}
         </span>
         Tahir Sajjad Butt
       </a>
-      <ul class="nav-links"><li><a href="/">Home</a></li><li><a href="/#research" class="active">Research</a></li><li><a href="/#setup">Setup</a></li><li><a href="/#publications">Publications</a></li><li><a href="/#contact">Contact</a></li></ul>
+      <ul class="nav-links"><li><a href="/">Home</a></li><li><a href="/#research" class="active">Research</a></li><li><a href="/#setup">Setup</a></li><li><a href="/#publications">Publications</a></li><li><a href="/#reading">Reading</a></li><li><a href="/#contact">Contact</a></li></ul>
       <div style="display:flex;gap:7px;align-items:center;">
         <a class="icon-btn" href="mailto:tahirsajjadbutt10@gmail.com" aria-label="Email">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M3 6l9 6 9-6M4 5h16a1 1 0 011 1v12a1 1 0 01-1 1H4a1 1 0 01-1-1V6a1 1 0 011-1z" stroke="#1B2430" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -310,7 +311,7 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);margin-top:48px;}
     </div>
   </div>
   <div class="mobile-menu" id="mobileMenu">
-    <div class="mobile-menu-panel"><a href="/">Home</a><a href="/#research" class="active">Research</a><a href="/#setup">Setup</a><a href="/#publications">Publications</a><a href="/#contact">Contact</a><a href="CV_Tahir_Sajjad_Butt.pdf" target="_blank" rel="noopener">CV (PDF) &#8599;</a><a href="mailto:tahirsajjadbutt10@gmail.com">Email</a><a href="http://www.linkedin.com/in/tahir-sajjad-butt-a8b384249" target="_blank" rel="noopener">LinkedIn &#8599;</a></div>
+    <div class="mobile-menu-panel"><a href="/">Home</a><a href="/#research" class="active">Research</a><a href="/#setup">Setup</a><a href="/#publications">Publications</a><a href="/#reading">Reading</a><a href="/#contact">Contact</a><a href="CV_Tahir_Sajjad_Butt.pdf" target="_blank" rel="noopener">CV (PDF) &#8599;</a><a href="mailto:tahirsajjadbutt10@gmail.com">Email</a><a href="http://www.linkedin.com/in/tahir-sajjad-butt-a8b384249" target="_blank" rel="noopener">LinkedIn &#8599;</a></div>
   </div>
 </header>
 <main>
@@ -370,7 +371,7 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);margin-top:48px;}
           <a href="/#research">Research</a>
           <a href="/#setup">Setup</a>
           <a href="/#publications">Publications</a>
-          <a href="/#contact">Contact</a>
+          <a href="/#reading">Reading</a><a href="/#contact">Contact</a>
         </div>
         <div class="footer-col">
           <p>Connect</p>
