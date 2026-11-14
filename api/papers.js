@@ -5,8 +5,8 @@ const MAT = '(cat:cond-mat.mtrl-sci OR cat:physics.app-ph OR cat:cond-mat.mes-ha
 const TOPICS = [
   ['Perovskites', MAT + ' AND (abs:"halide perovskite" OR abs:"halide perovskites" OR abs:"perovskite thin film")'],
   ['Bismuth perovskites (MBI)',
-    'abs:"methylammonium bismuth iodide" OR abs:MA3Bi2I9 OR abs:"bismuth halide perovskite" OR abs:"bismuth iodide perovskite" OR abs:"bismuth-based perovskite" OR abs:Cs3Bi2I9'],
-  ['Perovskite–silicon tandems', 'abs:tandem AND abs:perovskite AND abs:silicon'],
+    'abs:"methylammonium bismuth iodide" OR abs:MA3Bi2I9 OR abs:Cs3Bi2I9 OR (abs:bismuth AND abs:perovskite AND (abs:iodide OR abs:halide OR abs:bromide))'],
+  ['Perovskite–silicon tandems', 'abs:perovskite AND abs:tandem AND (abs:silicon OR abs:Si OR abs:"c-Si")'],
   ['Quantum materials',
     '(abs:"quantum materials" OR abs:"quantum material" OR abs:"van der Waals heterostructure" OR abs:"2D semiconductor") AND (abs:optoelectronic OR abs:photocurrent OR abs:exciton OR abs:photodetector)'],
   ['Lithium-ion batteries', '(abs:"lithium-ion battery" OR abs:"lithium-ion batteries" OR abs:"Li-ion battery" OR abs:"Li-ion batteries") AND ' + MAT],
