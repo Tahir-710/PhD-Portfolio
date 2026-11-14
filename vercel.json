@@ -1,0 +1,30 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/research.html",
+      "destination": "/#research",
+      "permanent": true
+    },
+    {
+      "source": "/publications.html",
+      "destination": "/#publications",
+      "permanent": true
+    },
+    {
+      "source": "/contact.html",
+      "destination": "/#contact",
+      "permanent": true
+    },
+    {
+      "source": "/cv.html",
+      "destination": "/CV_Tahir_Sajjad_Butt.pdf",
+      "permanent": true
+    }
+  ]
+}
