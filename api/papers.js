@@ -1,9 +1,11 @@
 // Latest arXiv papers in the site owner's research areas.
 // Runs on Vercel; the response is cached at the edge so arXiv is asked at most every few hours.
 const QUERY =
-  '(cat:cond-mat.mtrl-sci OR cat:physics.app-ph OR cat:physics.optics OR cat:cond-mat.mes-hall) AND (' +
+  '(cat:cond-mat.mtrl-sci OR cat:physics.app-ph OR cat:cond-mat.mes-hall) AND (' +
   [
-    'abs:photodetector',
+    'ti:photodetector',
+    'ti:photodetectors',
+    'abs:"perovskite photodetector"',
     'abs:"lead-free perovskite"',
     'abs:"bismuth halide"',
     'abs:"transient photocurrent"',
