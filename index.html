@@ -167,7 +167,7 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);margin-top:48px;}
 </style>
 <style>
 /* ── one-page sections ── */
-section[id],#comp-sim,#theses{scroll-margin-top:84px;}
+section[id],#comp-sim{scroll-margin-top:84px;}
 .page-sec{padding-top:72px;}
 .sub-sec{margin-top:44px;padding-top:32px;border-top:1px solid var(--line);}
 .sub-head{font-family:"Fraunces",serif;font-weight:600;font-size:23px;margin:0 0 12px;}
@@ -295,7 +295,7 @@ body::after{opacity:.95;-webkit-mask-image:radial-gradient(circle 250px at var(-
 .mini-card p{font-size:14px;color:var(--ink-soft);margin:0;line-height:1.6;}
 
 /* paper slider */
-.pslider{margin:0 0 56px;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:20px 24px 16px;
+.pslider{margin:0 0 8px;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:20px 24px 16px;
   box-shadow:0 18px 48px -34px rgba(27,36,48,.35);}
 .ps-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;}
 .ps-count{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.05em;color:var(--stone);}
@@ -311,17 +311,15 @@ body::after{opacity:.95;-webkit-mask-image:radial-gradient(circle 250px at var(-
 .ps-meta{font-size:13.5px;color:var(--stone);margin:0;line-height:1.5;}
 .ps-meta b{font-weight:600;color:var(--teal);margin-left:8px;white-space:nowrap;}
 .ps-note{flex:0 0 100%;margin:0;font-size:14px;color:var(--stone);padding:14px 2px;}
-.ps-foot{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-top:12px;padding-top:12px;border-top:1px solid var(--line);}
-.ps-dots{display:flex;gap:7px;flex-wrap:wrap;}
-.ps-dot{width:9px;height:9px;border-radius:50%;border:0;padding:0;background:var(--paper-2);box-shadow:inset 0 0 0 1px var(--line);cursor:pointer;transition:background .2s,width .2s;}
-.ps-dot[aria-selected="true"]{width:24px;border-radius:999px;background:var(--teal);box-shadow:none;}
-.ps-ctrl{display:flex;align-items:center;gap:8px;}
-.ps-stamp{font-size:11.5px;color:var(--stone);margin-right:6px;}
-.ps-btn{width:34px;height:34px;border-radius:50%;border:1px solid var(--line);background:var(--paper-2);color:var(--ink);font-size:15px;cursor:pointer;
-  display:flex;align-items:center;justify-content:center;font-family:inherit;transition:background .14s,color .14s;}
-.ps-btn:hover{background:var(--teal);color:#fff;}
-@media(max-width:640px){.pslider{padding:16px 16px 14px;margin-bottom:44px;}.ps-stamp{display:none;}}
-@media(prefers-reduced-motion:reduce){.ps-track{transition:none;}}
+.ps-foot{display:flex;align-items:center;gap:16px;margin-top:12px;padding-top:12px;border-top:1px solid var(--line);}
+.ps-stamp{font-size:11.5px;color:var(--stone);white-space:nowrap;}
+.ps-bar{flex:1;height:3px;border-radius:3px;background:var(--paper-2);overflow:hidden;}
+.ps-bar i{display:block;height:100%;width:0;background:var(--teal);border-radius:3px;}
+.ps-bar i.run{animation:psFill var(--ps-t,5.5s) linear forwards;}
+@keyframes psFill{from{width:0;}to{width:100%;}}
+.ps-slide{cursor:pointer;}
+@media(max-width:640px){.pslider{padding:16px 16px 14px;}.ps-stamp{display:none;}}
+@media(prefers-reduced-motion:reduce){.ps-track{transition:none;}.ps-bar{display:none;}}
 
 /* contact */
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:32px;}
@@ -557,23 +555,6 @@ body::after{opacity:.95;-webkit-mask-image:radial-gradient(circle 250px at var(-
     <div class="stat"><div class="v">Measured</div><div class="k">Transient photocurrent &middot; I&ndash;V &middot; rise and fall times</div></div>
     <div class="stat"><div class="v">Analyzed</div><div class="k">XRD &middot; SEM &middot; AFM data. RA at the FMOD Lab 2024&ndash;26, PI <a href="https://sbasse.lums.edu.pk/lums_employee/5129" target="_blank" rel="noopener" style="color:var(--teal);text-decoration:underline;">Dr. Ammar Ahmed Khan</a></div></div>
   </div>
-  <aside class="pslider" id="pslider" aria-roledescription="carousel" aria-label="Latest papers in my research areas">
-    <div class="ps-head">
-      <span class="sec-label" style="margin:0;">LATEST IN MY FIELD</span>
-      <span class="ps-count" id="psCount" aria-live="off"></span>
-    </div>
-    <div class="ps-viewport">
-      <div class="ps-track" id="psTrack"><p class="ps-note">Loading the latest papers&hellip;</p></div>
-    </div>
-    <div class="ps-foot">
-      <div class="ps-dots" id="psDots" role="tablist" aria-label="Choose a paper"></div>
-      <div class="ps-ctrl">
-        <span class="ps-stamp" id="psStamp"></span>
-        <button class="ps-btn" id="psPrev" type="button" aria-label="Previous paper">&#8592;</button>
-        <button class="ps-btn" id="psNext" type="button" aria-label="Next paper">&#8594;</button>
-      </div>
-    </div>
-  </aside>
 </section>
 
 <div class="wrap">
@@ -735,25 +716,23 @@ body::after{opacity:.95;-webkit-mask-image:radial-gradient(circle 250px at var(-
     <div class="pub-contrib"><strong>My contribution</strong>Fabricated MA<sub>3</sub>Bi<sub>2</sub>I<sub>9</sub> thin films with anti-solvent grain-size control, working with the lab team (Fig. 2, Table 1); fabricated the photodetectors and measured their photocurrent response (Fig. S2, Supporting Information). Author contributions listed in the paper: data curation, investigation and methodology (supporting).</div>
     <a class="doi-link" href="https://onlinelibrary.wiley.com/doi/abs/10.1002/adem.202402009" target="_blank" rel="noopener">10.1002/adem.202402009 &#8599;</a>
   </div>
+</section>
 
-  <div id="theses" class="sub-sec">
-    <span class="sec-label">Theses</span>
-    <h3 class="sub-head">Degree theses</h3>
-    <div class="mini-2">
-      <div class="mini-card">
-        <h4>A photodetector based on lead-free perovskite-like methylammonium bismuth iodide (MBI)</h4>
-        <span class="mini-date">M.S. thesis &middot; LUMS &middot; 2024 &middot; Advisor: <a href="https://sbasse.lums.edu.pk/lums_employee/5129" target="_blank" rel="noopener" style="color:var(--teal);text-decoration:underline;">Dr. Ammar Ahmed Khan</a></span>
-        <p>Anti-solvent control of MA<sub>3</sub>Bi<sub>2</sub>I<sub>9</sub> grain size and its effect on photodetector response. Parts appear in <i>Adv. Eng. Mater.</i> (2025).</p>
-        <a class="doi-link" href="proj-mbi.html" target="_blank" rel="noopener">Project page &#8599;</a>
-      </div>
-      <div class="mini-card">
-        <h4>Influence of Repetition Rate on the Growth of MgO Thin Film by Pulsed Laser Deposition Technique</h4>
-        <span class="mini-date">B.S. thesis &middot; UMT (external placement at CASP, GCU Lahore) &middot; 2022 &middot; Advisor: Hira Yaseen</span>
-        <p>Thickness, crystallite size and grain morphology of PLD-grown MgO films on silicon. Available on request.</p>
-        <a class="doi-link" href="proj-mgo.html" target="_blank" rel="noopener">Project page &#8599;</a>
-      </div>
+<!-- ───────── LATEST PAPERS ───────── -->
+<section class="wrap" style="padding-top:56px;">
+  <aside class="pslider" id="pslider" aria-roledescription="carousel" aria-label="Latest papers in my research areas">
+    <div class="ps-head">
+      <span class="sec-label" style="margin:0;">LATEST IN MY FIELD</span>
+      <span class="ps-count" id="psCount" aria-live="off"></span>
     </div>
-  </div>
+    <div class="ps-viewport">
+      <div class="ps-track" id="psTrack"><p class="ps-note">Loading the latest papers&hellip;</p></div>
+    </div>
+    <div class="ps-foot">
+      <span class="ps-stamp" id="psStamp"></span>
+      <span class="ps-bar" aria-hidden="true"><i id="psBar"></i></span>
+    </div>
+  </aside>
 </section>
 
 <!-- ───────── CONTACT ───────── -->
@@ -853,19 +832,19 @@ body::after{opacity:.95;-webkit-mask-image:radial-gradient(circle 250px at var(-
 <script>
 (function(){
   var box=document.getElementById('pslider');if(!box||!window.fetch)return;
-  var track=document.getElementById('psTrack'),dots=document.getElementById('psDots'),count=document.getElementById('psCount'),stamp=document.getElementById('psStamp');
-  var n=0,i=0,timer=null,hover=false,still=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var track=document.getElementById('psTrack'),count=document.getElementById('psCount'),stamp=document.getElementById('psStamp'),bar=document.getElementById('psBar');
+  var STEP=5500,n=0,i=0,timer=null,held=false,seen=true,still=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  box.style.setProperty('--ps-t',STEP+'ms');
   function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x)e.textContent=x;return e;}
   function day(s){var d=new Date(s);return isNaN(d)?s:d.toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric',timeZone:'UTC'});}
   function show(k){
     i=(k+n)%n;track.style.transform='translateX(-'+(i*100)+'%)';
-    var s=track.children,d=dots.children;
-    for(var j=0;j<n;j++){s[j].setAttribute('aria-hidden',j===i?'false':'true');s[j].tabIndex=j===i?0:-1;d[j].setAttribute('aria-selected',j===i?'true':'false');}
+    for(var j=0;j<n;j++){track.children[j].setAttribute('aria-hidden',j===i?'false':'true');track.children[j].tabIndex=j===i?0:-1;}
     count.textContent=(i+1)+' / '+n;
+    bar.classList.remove('run');void bar.offsetWidth;if(!held&&seen&&!document.hidden&&!still)bar.classList.add('run');
   }
-  function stop(){if(timer){clearInterval(timer);timer=null;}}
-  function play(){stop();if(still||n<2||hover||document.hidden)return;timer=setInterval(function(){show(i+1);},6500);}
-  function go(k){show(k);play();}
+  function stop(){if(timer){clearTimeout(timer);timer=null;}bar.classList.remove('run');}
+  function play(){stop();if(still||n<2||held||!seen||document.hidden)return;bar.classList.remove('run');void bar.offsetWidth;bar.classList.add('run');timer=setTimeout(function(){show(i+1);play();},STEP);}
   fetch('/api/papers').then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(function(d){
     var ps=d.papers;if(!ps||!ps.length)throw new Error('empty');
     n=ps.length;track.textContent='';
@@ -874,21 +853,17 @@ body::after{opacity:.95;-webkit-mask-image:radial-gradient(circle 250px at var(-
       var top=el('div','ps-top');top.appendChild(el('span','ps-topic',p.topic));top.appendChild(el('span','ps-date',day(p.date)));
       var m=el('p','ps-meta',p.authors);m.appendChild(el('b','','Read on arXiv \u2197'));
       a.appendChild(top);a.appendChild(el('h3','',p.title));a.appendChild(m);track.appendChild(a);
-      var b=el('button','ps-dot');b.type='button';b.setAttribute('role','tab');b.setAttribute('aria-label',p.topic);b.onclick=function(){go(j);};dots.appendChild(b);
     });
     if(d.fetched)stamp.textContent='arXiv \u00b7 checked '+day(d.fetched);
     show(0);play();
-  }).catch(function(){box.hidden=true;});
-  document.getElementById('psPrev').onclick=function(){if(n)go(i-1);};
-  document.getElementById('psNext').onclick=function(){if(n)go(i+1);};
-  box.addEventListener('mouseenter',function(){hover=true;stop();});
-  box.addEventListener('mouseleave',function(){hover=false;play();});
-  box.addEventListener('focusin',stop);box.addEventListener('focusout',play);
-  box.addEventListener('keydown',function(e){if(e.key==='ArrowRight')go(i+1);else if(e.key==='ArrowLeft')go(i-1);});
-  document.addEventListener('visibilitychange',play);
-  var x0=null;
-  box.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;stop();},{passive:true});
-  box.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;x0=null;if(Math.abs(dx)>40)go(i+(dx<0?1:-1));else play();},{passive:true});
+  }).catch(function(){box.parentNode.hidden=true;});
+  /* slide only while it is on screen; pause while the pointer or keyboard focus is on it */
+  if('IntersectionObserver' in window)new IntersectionObserver(function(e){seen=e[0].isIntersecting;n&&play();},{threshold:.35}).observe(box);
+  box.addEventListener('mouseenter',function(){held=true;stop();});
+  box.addEventListener('mouseleave',function(){held=false;play();});
+  box.addEventListener('focusin',function(){held=true;stop();});
+  box.addEventListener('focusout',function(){held=false;play();});
+  document.addEventListener('visibilitychange',function(){n&&play();});
 })();
 </script>
 
