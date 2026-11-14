@@ -171,7 +171,10 @@ section[id],#comp-sim,#theses{scroll-margin-top:84px;}
 .page-sec{padding-top:72px;}
 .sub-sec{margin-top:44px;padding-top:32px;border-top:1px solid var(--line);}
 .sub-head{font-family:"Fraunces",serif;font-weight:600;font-size:23px;margin:0 0 12px;}
-body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:url(bg-art.svg) center/cover no-repeat;opacity:.34;}
+body::before,body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:url(bg-art.svg) center/cover no-repeat;}
+body::before{opacity:.26;}
+/* a soft beam follows the pointer and lights up the drawing beneath it */
+body::after{opacity:.95;-webkit-mask-image:radial-gradient(circle 250px at var(--mx,78%) var(--my,24%),#000 0,rgba(0,0,0,.5) 45%,transparent 100%);mask-image:radial-gradient(circle 250px at var(--mx,78%) var(--my,24%),#000 0,rgba(0,0,0,.5) 45%,transparent 100%);}
 .cv-btn{font-size:12px;font-weight:600;letter-spacing:.02em;color:var(--ink);}
 @media(max-width:520px){.nav-inner .icon-btn:not(.cv-btn){display:none;}.nav-inner{padding-left:14px;}}
 
@@ -202,10 +205,31 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;ba
   box-shadow:0 10px 26px -10px rgba(0,0,0,.6);text-align:center;}
 .hero-inset img{width:100%;height:auto;border-radius:10px;}
 .hero-inset span{display:block;font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:.03em;color:var(--stone);margin-top:4px;}
+/* hero picture: the light chops at 0.33 Hz and the photocurrent trace answers it */
+.hero-photo{--T:3s;}
+.hero-dim{position:absolute;inset:0;background:rgba(8,12,20,.5);opacity:0;animation:chopDim var(--T) infinite;}
+@keyframes chopDim{0%{opacity:1;}4%,50%{opacity:0;}54%,100%{opacity:1;}}
+.hero-chip{position:absolute;top:16px;left:16px;display:inline-flex;align-items:center;gap:7px;padding:6px 11px;border-radius:999px;
+  background:rgba(14,19,26,.62);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.16);
+  font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.07em;color:#EEF1F4;}
+.hero-chip i{width:7px;height:7px;border-radius:50%;background:var(--gold-soft);box-shadow:0 0 0 3px rgba(233,200,138,.25);animation:chopLed var(--T) infinite;}
+.hero-chip .off{display:none;}
+@keyframes chopLed{0%{opacity:.25;}4%,50%{opacity:1;}54%,100%{opacity:.25;}}
+.hero-chip .on{animation:chopOn var(--T) steps(1) infinite;}
+.hero-chip .off{display:inline;position:absolute;left:25px;animation:chopOff var(--T) steps(1) infinite;}
+@keyframes chopOn{0%{opacity:1;}50%{opacity:0;}}
+@keyframes chopOff{0%{opacity:0;}50%{opacity:1;}}
+.hero-chip{min-width:104px;}
+.hero-inset,.hero-chip,.hero-photo figcaption{z-index:1;}
+.hero-scope{display:block;position:relative;height:72px;margin:0 0 14px;overflow:hidden;border-bottom:1px dashed rgba(255,255,255,.22);}
+.hero-scope svg{position:absolute;left:0;top:16px;height:56px;width:150%;animation:scopeRun var(--T) linear infinite;}
+@keyframes scopeRun{to{transform:translateX(-33.3333%);}}
+.hero-scope em{position:absolute;right:0;top:0;font-style:normal;font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:.06em;color:rgba(238,241,244,.6);}
+.hero-photo figcaption{padding-top:70px;}
+@media(prefers-reduced-motion:reduce){.hero-dim,.hero-chip i,.hero-chip .on,.hero-chip .off,.hero-scope svg{animation:none;}.hero-chip .off{display:none;}}
 @media(max-width:900px){
   .hero-grid{grid-template-columns:1fr;gap:30px;}
-  .hero-photo{aspect-ratio:4/3;max-width:560px;width:100%;}
-  .hero-photo>img{object-position:50% 38%;}
+  .hero-photo{aspect-ratio:5/6;max-width:480px;width:100%;}
   .hero-inset{width:24%;}
 }
 .stat-strip{margin:40px 0 44px;}
@@ -271,9 +295,11 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;ba
 .mini-card p{font-size:14px;color:var(--ink-soft);margin:0;line-height:1.6;}
 
 /* reading list */
-.paper-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
-@media(max-width:900px){.paper-grid{grid-template-columns:1fr 1fr;}}
-@media(max-width:600px){.paper-grid{grid-template-columns:1fr;}}
+.paper-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+.paper-card:first-child{grid-column:span 2;}
+.paper-card:first-child h3{font-size:19px;}
+@media(max-width:1000px){.paper-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.paper-grid{grid-template-columns:1fr;}.paper-card:first-child{grid-column:auto;}}
 .paper-card{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
   padding:20px;color:var(--ink);transition:border-color .15s,box-shadow .15s,transform .15s;}
 .paper-card:hover{border-color:rgba(43,110,107,.45);box-shadow:0 8px 28px -18px rgba(27,36,48,.32);transform:translateY(-1px);}
@@ -501,7 +527,13 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;ba
         <img src="hero-devices.jpg" width="360" height="360" alt="Finished MA3Bi2I9 photodetectors with gold contacts">
         <span>Finished devices</span>
       </span>
+      <span class="hero-dim" aria-hidden="true"></span>
+      <span class="hero-chip" aria-hidden="true"><i></i><span class="on">LIGHT ON</span><span class="off">LIGHT OFF</span></span>
       <figcaption>
+        <span class="hero-scope" aria-hidden="true">
+          <svg viewBox="0 0 400 56" preserveAspectRatio="none"><path class="scope-trace" d="M0 50.0 L4 40.6 L8 33.5 L12 28.1 L16 24.1 L20 21.1 L24 18.8 L28 17.1 L32 15.9 L36 14.9 L40 14.2 L44 13.6 L48 13.2 L52 12.9 L56 12.7 L60 12.5 L64 12.4 L68 12.3 L72 12.2 L76 12.2 L80 12.1 L84 12.1 L88 12.1 L92 12.1 L96 12.0 L100 12.0 L104 17.4 L108 22.1 L112 26.0 L116 29.5 L120 32.4 L124 34.9 L128 37.1 L132 38.9 L136 40.5 L140 41.8 L144 43.0 L148 44.0 L152 44.9 L156 45.6 L160 46.2 L164 46.8 L168 47.2 L172 47.6 L176 48.0 L180 48.2 L184 48.5 L188 48.7 L192 48.9 L196 49.1 L200 50.0 L204 40.6 L208 33.5 L212 28.1 L216 24.1 L220 21.1 L224 18.8 L228 17.1 L232 15.9 L236 14.9 L240 14.2 L244 13.6 L248 13.2 L252 12.9 L256 12.7 L260 12.5 L264 12.4 L268 12.3 L272 12.2 L276 12.2 L280 12.1 L284 12.1 L288 12.1 L292 12.1 L296 12.0 L300 12.0 L304 17.4 L308 22.1 L312 26.0 L316 29.5 L320 32.4 L324 34.9 L328 37.1 L332 38.9 L336 40.5 L340 41.8 L344 43.0 L348 44.0 L352 44.9 L356 45.6 L360 46.2 L364 46.8 L368 47.2 L372 47.6 L376 48.0 L380 48.2 L384 48.5 L388 48.7 L392 48.9 L396 49.1 L400 50.0 L404 40.6 L408 33.5 L412 28.1 L416 24.1 L420 21.1 L424 18.8 L428 17.1 L432 15.9 L436 14.9 L440 14.2 L444 13.6 L448 13.2 L452 12.9 L456 12.7 L460 12.5 L464 12.4 L468 12.3 L472 12.2 L476 12.2 L480 12.1 L484 12.1 L488 12.1 L492 12.1 L496 12.0 L500 12.0 L504 17.4 L508 22.1 L512 26.0 L516 29.5 L520 32.4 L524 34.9 L528 37.1 L532 38.9 L536 40.5 L540 41.8 L544 43.0 L548 44.0 L552 44.9 L556 45.6 L560 46.2 L564 46.8 L568 47.2 L572 47.6 L576 48.0 L580 48.2 L584 48.5 L588 48.7 L592 48.9 L596 49.1 L600 50.0" fill="none" stroke="#E9C88A" stroke-width="2" vector-effect="non-scaling-stroke" stroke-linejoin="round"/></svg>
+          <em>PHOTOCURRENT &middot; 0.33 Hz CHOPPED LIGHT</em>
+        </span>
         <b>FMOD LAB, LUMS</b>
         The chopped-light photocurrent rig during a measurement
       </figcaption>
@@ -699,7 +731,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;ba
 <section id="reading" class="wrap page-sec">
   <span class="sec-label">Reading List</span>
   <h2 class="sec-head">New papers in my field</h2>
-  <p class="sec-dek" style="max-width:700px;margin-bottom:26px;">The newest arXiv preprints on photodetectors, lead-free perovskites, thin-film growth and energy storage, the areas I follow. This list updates itself as new papers are posted.</p>
+  <p class="sec-dek" style="max-width:700px;margin-bottom:26px;">The newest arXiv preprint in each area I follow: halide perovskites, bismuth perovskites such as MBI, perovskite&ndash;silicon tandems, quantum materials, lithium-ion batteries, optoelectronics and polymers. This list updates itself as new papers are posted.</p>
   <div class="paper-grid" id="paperGrid" aria-live="polite">
     <p class="paper-note" id="paperNote">Loading the latest papers&hellip;</p>
   </div>
@@ -823,4 +855,13 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;ba
 })();
 </script>
 
+<script>
+(function(){
+  if(!window.matchMedia||!matchMedia('(hover:hover) and (pointer:fine)').matches)return;
+  var r=document.documentElement,x=0,y=0,q=false;
+  addEventListener('pointermove',function(e){x=e.clientX;y=e.clientY;
+    if(!q){q=true;requestAnimationFrame(function(){q=false;r.style.setProperty('--mx',x+'px');r.style.setProperty('--my',y+'px');});}
+  },{passive:true});
+})();
+</script>
 </body></html>

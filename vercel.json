@@ -26,5 +26,10 @@
       "destination": "/CV_Tahir_Sajjad_Butt.pdf",
       "permanent": true
     }
-  ]
+  ],
+  "functions": {
+    "api/papers.js": {
+      "maxDuration": 60
+    }
+  }
 }

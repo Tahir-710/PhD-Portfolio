@@ -42,7 +42,10 @@ header{position:sticky;top:0;z-index:30;padding:14px 0;background:linear-gradien
 .icon-btn{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;
   justify-content:center;background:var(--paper-2);border:1px solid var(--line);}
 .icon-btn:hover{background:var(--teal-soft);}
-body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:url(bg-art.svg) center/cover no-repeat;opacity:.34;}
+body::before,body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:url(bg-art.svg) center/cover no-repeat;}
+body::before{opacity:.26;}
+/* a soft beam follows the pointer and lights up the drawing beneath it */
+body::after{opacity:.95;-webkit-mask-image:radial-gradient(circle 250px at var(--mx,78%) var(--my,24%),#000 0,rgba(0,0,0,.5) 45%,transparent 100%);mask-image:radial-gradient(circle 250px at var(--mx,78%) var(--my,24%),#000 0,rgba(0,0,0,.5) 45%,transparent 100%);}
 .cv-btn{font-size:12px;font-weight:600;letter-spacing:.02em;color:var(--ink);}
 @media(max-width:520px){.nav-inner .icon-btn:not(.cv-btn){display:none;}.nav-inner{padding-left:14px;}}
 
@@ -375,5 +378,14 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);margin-top:48px;}
 })();
 </script>
 
+<script>
+(function(){
+  if(!window.matchMedia||!matchMedia('(hover:hover) and (pointer:fine)').matches)return;
+  var r=document.documentElement,x=0,y=0,q=false;
+  addEventListener('pointermove',function(e){x=e.clientX;y=e.clientY;
+    if(!q){q=true;requestAnimationFrame(function(){q=false;r.style.setProperty('--mx',x+'px');r.style.setProperty('--my',y+'px');});}
+  },{passive:true});
+})();
+</script>
 </body>
 </html>
