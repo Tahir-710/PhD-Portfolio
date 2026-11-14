@@ -294,22 +294,34 @@ body::after{opacity:.95;-webkit-mask-image:radial-gradient(circle 250px at var(-
 .mini-date{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--stone);display:block;margin-bottom:10px;}
 .mini-card p{font-size:14px;color:var(--ink-soft);margin:0;line-height:1.6;}
 
-/* reading list */
-.paper-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
-.paper-card:first-child{grid-column:span 2;}
-.paper-card:first-child h3{font-size:19px;}
-@media(max-width:1000px){.paper-grid{grid-template-columns:1fr 1fr;}}
-@media(max-width:600px){.paper-grid{grid-template-columns:1fr;}.paper-card:first-child{grid-column:auto;}}
-.paper-card{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
-  padding:20px;color:var(--ink);transition:border-color .15s,box-shadow .15s,transform .15s;}
-.paper-card:hover{border-color:rgba(43,110,107,.45);box-shadow:0 8px 28px -18px rgba(27,36,48,.32);transform:translateY(-1px);}
-.paper-top{display:flex;justify-content:space-between;gap:10px;align-items:baseline;margin-bottom:9px;}
-.paper-topic{font-family:"IBM Plex Mono",monospace;font-size:10.5px;font-weight:600;letter-spacing:.05em;color:var(--teal);text-transform:uppercase;}
-.paper-date{font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:var(--stone);white-space:nowrap;}
-.paper-card h3{font-family:"Fraunces",serif;font-weight:600;font-size:16px;line-height:1.32;margin:0 0 9px;overflow-wrap:anywhere;}
-.paper-authors{font-size:13px;color:var(--stone);margin:auto 0 0;line-height:1.5;}
-.paper-note{grid-column:1/-1;font-size:14px;color:var(--stone);margin:0;background:var(--card);border:1px dashed var(--line);border-radius:var(--radius);padding:20px;}
-.paper-foot{font-size:12.5px;color:var(--stone);margin:16px 0 0;}
+/* paper slider */
+.pslider{margin:0 0 56px;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:20px 24px 16px;
+  box-shadow:0 18px 48px -34px rgba(27,36,48,.35);}
+.ps-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;}
+.ps-count{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.05em;color:var(--stone);}
+.ps-viewport{overflow:hidden;touch-action:pan-y;}
+.ps-track{display:flex;transition:transform .55s cubic-bezier(.22,.8,.26,1);will-change:transform;}
+.ps-slide{flex:0 0 100%;min-width:0;display:block;color:var(--ink);padding:2px 2px 6px;}
+.ps-top{display:flex;align-items:center;gap:12px;margin-bottom:9px;flex-wrap:wrap;}
+.ps-topic{font-family:"IBM Plex Mono",monospace;font-size:10.5px;font-weight:600;letter-spacing:.05em;color:var(--teal);text-transform:uppercase;
+  background:var(--teal-soft);border-radius:999px;padding:3px 10px;}
+.ps-date{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--stone);}
+.ps-slide h3{font-family:"Fraunces",serif;font-weight:600;font-size:clamp(18px,2.1vw,23px);line-height:1.28;margin:0 0 8px;overflow-wrap:anywhere;max-width:900px;}
+.ps-slide:hover h3{color:var(--teal);}
+.ps-meta{font-size:13.5px;color:var(--stone);margin:0;line-height:1.5;}
+.ps-meta b{font-weight:600;color:var(--teal);margin-left:8px;white-space:nowrap;}
+.ps-note{flex:0 0 100%;margin:0;font-size:14px;color:var(--stone);padding:14px 2px;}
+.ps-foot{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-top:12px;padding-top:12px;border-top:1px solid var(--line);}
+.ps-dots{display:flex;gap:7px;flex-wrap:wrap;}
+.ps-dot{width:9px;height:9px;border-radius:50%;border:0;padding:0;background:var(--paper-2);box-shadow:inset 0 0 0 1px var(--line);cursor:pointer;transition:background .2s,width .2s;}
+.ps-dot[aria-selected="true"]{width:24px;border-radius:999px;background:var(--teal);box-shadow:none;}
+.ps-ctrl{display:flex;align-items:center;gap:8px;}
+.ps-stamp{font-size:11.5px;color:var(--stone);margin-right:6px;}
+.ps-btn{width:34px;height:34px;border-radius:50%;border:1px solid var(--line);background:var(--paper-2);color:var(--ink);font-size:15px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;font-family:inherit;transition:background .14s,color .14s;}
+.ps-btn:hover{background:var(--teal);color:#fff;}
+@media(max-width:640px){.pslider{padding:16px 16px 14px;margin-bottom:44px;}.ps-stamp{display:none;}}
+@media(prefers-reduced-motion:reduce){.ps-track{transition:none;}}
 
 /* contact */
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:32px;}
@@ -484,7 +496,7 @@ body::after{opacity:.95;-webkit-mask-image:radial-gradient(circle 250px at var(-
         </span>
         Tahir Sajjad Butt
       </a>
-      <ul class="nav-links"><li><a href="#top" class="active">Home</a></li><li><a href="#research">Research</a></li><li><a href="#setup">Setup</a></li><li><a href="#publications">Publications</a></li><li><a href="#reading">Reading</a></li><li><a href="#contact">Contact</a></li></ul>
+      <ul class="nav-links"><li><a href="#top" class="active">Home</a></li><li><a href="#research">Research</a></li><li><a href="#setup">Setup</a></li><li><a href="#publications">Publications</a></li><li><a href="#contact">Contact</a></li></ul>
       <div style="display:flex;gap:7px;align-items:center;">
         <a class="icon-btn" href="mailto:tahirsajjadbutt10@gmail.com" aria-label="Email">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M3 6l9 6 9-6M4 5h16a1 1 0 011 1v12a1 1 0 01-1 1H4a1 1 0 01-1-1V6a1 1 0 011-1z" stroke="#1B2430" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -500,7 +512,7 @@ body::after{opacity:.95;-webkit-mask-image:radial-gradient(circle 250px at var(-
     </div>
   </div>
   <div class="mobile-menu" id="mobileMenu">
-    <div class="mobile-menu-panel"><a href="#top" class="active">Home</a><a href="#research">Research</a><a href="#setup">Setup</a><a href="#publications">Publications</a><a href="#reading">Reading</a><a href="#contact">Contact</a><a href="CV_Tahir_Sajjad_Butt.pdf" target="_blank" rel="noopener">CV (PDF) &#8599;</a><a href="mailto:tahirsajjadbutt10@gmail.com">Email</a><a href="http://www.linkedin.com/in/tahir-sajjad-butt-a8b384249" target="_blank" rel="noopener">LinkedIn &#8599;</a></div>
+    <div class="mobile-menu-panel"><a href="#top" class="active">Home</a><a href="#research">Research</a><a href="#setup">Setup</a><a href="#publications">Publications</a><a href="#contact">Contact</a><a href="CV_Tahir_Sajjad_Butt.pdf" target="_blank" rel="noopener">CV (PDF) &#8599;</a><a href="mailto:tahirsajjadbutt10@gmail.com">Email</a><a href="http://www.linkedin.com/in/tahir-sajjad-butt-a8b384249" target="_blank" rel="noopener">LinkedIn &#8599;</a></div>
   </div>
 </header>
 <main>
@@ -545,6 +557,23 @@ body::after{opacity:.95;-webkit-mask-image:radial-gradient(circle 250px at var(-
     <div class="stat"><div class="v">Measured</div><div class="k">Transient photocurrent &middot; I&ndash;V &middot; rise and fall times</div></div>
     <div class="stat"><div class="v">Analyzed</div><div class="k">XRD &middot; SEM &middot; AFM data. RA at the FMOD Lab 2024&ndash;26, PI <a href="https://sbasse.lums.edu.pk/lums_employee/5129" target="_blank" rel="noopener" style="color:var(--teal);text-decoration:underline;">Dr. Ammar Ahmed Khan</a></div></div>
   </div>
+  <aside class="pslider" id="pslider" aria-roledescription="carousel" aria-label="Latest papers in my research areas">
+    <div class="ps-head">
+      <span class="sec-label" style="margin:0;">LATEST IN MY FIELD</span>
+      <span class="ps-count" id="psCount" aria-live="off"></span>
+    </div>
+    <div class="ps-viewport">
+      <div class="ps-track" id="psTrack"><p class="ps-note">Loading the latest papers&hellip;</p></div>
+    </div>
+    <div class="ps-foot">
+      <div class="ps-dots" id="psDots" role="tablist" aria-label="Choose a paper"></div>
+      <div class="ps-ctrl">
+        <span class="ps-stamp" id="psStamp"></span>
+        <button class="ps-btn" id="psPrev" type="button" aria-label="Previous paper">&#8592;</button>
+        <button class="ps-btn" id="psNext" type="button" aria-label="Next paper">&#8594;</button>
+      </div>
+    </div>
+  </aside>
 </section>
 
 <div class="wrap">
@@ -727,17 +756,6 @@ body::after{opacity:.95;-webkit-mask-image:radial-gradient(circle 250px at var(-
   </div>
 </section>
 
-<!-- ───────── READING ───────── -->
-<section id="reading" class="wrap page-sec">
-  <span class="sec-label">Reading List</span>
-  <h2 class="sec-head">New papers in my field</h2>
-  <p class="sec-dek" style="max-width:700px;margin-bottom:26px;">The newest arXiv preprint in each area I follow: halide perovskites, bismuth perovskites such as MBI, perovskite&ndash;silicon tandems, quantum materials, lithium-ion batteries, optoelectronics and polymers. This list updates itself as new papers are posted.</p>
-  <div class="paper-grid" id="paperGrid" aria-live="polite">
-    <p class="paper-note" id="paperNote">Loading the latest papers&hellip;</p>
-  </div>
-  <p class="paper-foot"><span id="paperStamp"></span> <a class="doi-link" style="margin-top:0" href="https://arxiv.org/list/cond-mat.mtrl-sci/recent" target="_blank" rel="noopener">More on arXiv &#8599;</a></p>
-</section>
-
 <!-- ───────── CONTACT ───────── -->
 <section id="contact" class="wrap page-sec" style="padding-bottom:24px;">
   <span class="sec-label">Contact</span>
@@ -783,7 +801,6 @@ body::after{opacity:.95;-webkit-mask-image:radial-gradient(circle 250px at var(-
           <a href="#research">Research</a>
           <a href="#setup">Setup</a>
           <a href="#publications">Publications</a>
-          <a href="#reading">Reading</a>
           <a href="#contact">Contact</a>
         </div>
         <div class="footer-col">
@@ -814,7 +831,7 @@ body::after{opacity:.95;-webkit-mask-image:radial-gradient(circle 250px at var(-
     menu.addEventListener('click',function(e){ if(e.target===menu||e.target.tagName==='A')closeMenu(); });
   }
   /* highlight the nav link of the section in view */
-  var ids=['top','research','setup','publications','reading','contact'];
+  var ids=['top','research','setup','publications','contact'];
   var links=document.querySelectorAll('.nav-links a, .mobile-menu-panel a[href^="#"]');
   var ticking=false;
   function spy(){
@@ -835,23 +852,43 @@ body::after{opacity:.95;-webkit-mask-image:radial-gradient(circle 250px at var(-
 
 <script>
 (function(){
-  var grid=document.getElementById('paperGrid'),note=document.getElementById('paperNote'),stamp=document.getElementById('paperStamp');
-  if(!grid||!window.fetch)return;
+  var box=document.getElementById('pslider');if(!box||!window.fetch)return;
+  var track=document.getElementById('psTrack'),dots=document.getElementById('psDots'),count=document.getElementById('psCount'),stamp=document.getElementById('psStamp');
+  var n=0,i=0,timer=null,hover=false,still=matchMedia('(prefers-reduced-motion:reduce)').matches;
   function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x)e.textContent=x;return e;}
   function day(s){var d=new Date(s);return isNaN(d)?s:d.toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric',timeZone:'UTC'});}
+  function show(k){
+    i=(k+n)%n;track.style.transform='translateX(-'+(i*100)+'%)';
+    var s=track.children,d=dots.children;
+    for(var j=0;j<n;j++){s[j].setAttribute('aria-hidden',j===i?'false':'true');s[j].tabIndex=j===i?0:-1;d[j].setAttribute('aria-selected',j===i?'true':'false');}
+    count.textContent=(i+1)+' / '+n;
+  }
+  function stop(){if(timer){clearInterval(timer);timer=null;}}
+  function play(){stop();if(still||n<2||hover||document.hidden)return;timer=setInterval(function(){show(i+1);},6500);}
+  function go(k){show(k);play();}
   fetch('/api/papers').then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(function(d){
-    if(!d.papers||!d.papers.length)throw new Error('empty');
-    grid.textContent='';
-    d.papers.forEach(function(p){
-      var a=el('a','paper-card');a.href=p.url;a.target='_blank';a.rel='noopener';
-      var top=el('div','paper-top');top.appendChild(el('span','paper-topic',p.topic));top.appendChild(el('span','paper-date',day(p.date)));
-      a.appendChild(top);a.appendChild(el('h3','',p.title));a.appendChild(el('p','paper-authors',p.authors));
-      grid.appendChild(a);
+    var ps=d.papers;if(!ps||!ps.length)throw new Error('empty');
+    n=ps.length;track.textContent='';
+    ps.forEach(function(p,j){
+      var a=el('a','ps-slide');a.href=p.url;a.target='_blank';a.rel='noopener';a.setAttribute('role','group');a.setAttribute('aria-roledescription','slide');a.setAttribute('aria-label',(j+1)+' of '+n);
+      var top=el('div','ps-top');top.appendChild(el('span','ps-topic',p.topic));top.appendChild(el('span','ps-date',day(p.date)));
+      var m=el('p','ps-meta',p.authors);m.appendChild(el('b','','Read on arXiv \u2197'));
+      a.appendChild(top);a.appendChild(el('h3','',p.title));a.appendChild(m);track.appendChild(a);
+      var b=el('button','ps-dot');b.type='button';b.setAttribute('role','tab');b.setAttribute('aria-label',p.topic);b.onclick=function(){go(j);};dots.appendChild(b);
     });
-    if(d.fetched)stamp.textContent='Source: arXiv. Last checked '+day(d.fetched)+'.';
-  }).catch(function(){
-    note.textContent='The paper feed is not reachable right now. Use the arXiv link below to see the latest papers.';
-  });
+    if(d.fetched)stamp.textContent='arXiv \u00b7 checked '+day(d.fetched);
+    show(0);play();
+  }).catch(function(){box.hidden=true;});
+  document.getElementById('psPrev').onclick=function(){if(n)go(i-1);};
+  document.getElementById('psNext').onclick=function(){if(n)go(i+1);};
+  box.addEventListener('mouseenter',function(){hover=true;stop();});
+  box.addEventListener('mouseleave',function(){hover=false;play();});
+  box.addEventListener('focusin',stop);box.addEventListener('focusout',play);
+  box.addEventListener('keydown',function(e){if(e.key==='ArrowRight')go(i+1);else if(e.key==='ArrowLeft')go(i-1);});
+  document.addEventListener('visibilitychange',play);
+  var x0=null;
+  box.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;stop();},{passive:true});
+  box.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;x0=null;if(Math.abs(dx)>40)go(i+(dx<0?1:-1));else play();},{passive:true});
 })();
 </script>
 
