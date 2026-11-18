@@ -341,6 +341,45 @@ body::after{opacity:.95;-webkit-mask-image:radial-gradient(circle 250px at var(-
 .interest-card h3{font-family:"Fraunces",serif;font-weight:600;font-size:17px;margin:0 0 10px;}
 .interest-card ul{margin:0;padding-left:16px;color:var(--ink-soft);font-size:14px;line-height:1.7;}
 </style>
+<style>
+/* ── responsive polish: every screen size ── */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;}
+img,svg,video{max-width:100%;}
+/* large monitors, LED screens and TVs: scale the whole layout up */
+@media(min-width:1700px){html{zoom:1.12;}}
+@media(min-width:2200px){html{zoom:1.35;}}
+@media(min-width:3000px){html{zoom:1.8;}}
+/* touch screens: no pointer-following light (saves battery) */
+@media(hover:none){body::after{display:none;}}
+/* menu stays scrollable on short / landscape phones */
+.mobile-menu-panel{max-height:calc(100vh - 92px);max-height:calc(100dvh - 92px);overflow-y:auto;-webkit-overflow-scrolling:touch;}
+@media(max-width:520px){.wrap{padding:0 16px;}.back-link{margin-bottom:24px;}}
+@media(max-width:380px){.brand{font-size:14.5px;gap:8px;}.brand-mark{width:28px;height:28px;}}
+/* floating back button on project pages */
+.float-back{position:fixed;left:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;display:inline-flex;align-items:center;gap:7px;
+  padding:11px 18px;border-radius:999px;background:var(--ink);color:var(--paper);font-size:14px;font-weight:600;
+  box-shadow:0 12px 30px -12px rgba(27,36,48,.6);opacity:0;transform:translateY(14px);pointer-events:none;transition:opacity .2s,transform .2s;}
+.float-back.show{opacity:1;transform:none;pointer-events:auto;}
+.float-back:hover{background:var(--teal);}
+@media(hover:none){.doi-link{padding:9px 0 5px;}}
+</style>
+<style>
+/* ── homepage responsive ── */
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr 290px;gap:32px;align-items:center;}.hero-photo{aspect-ratio:4/5;max-width:none;}.hero-inset{width:31%;}}
+@media(max-width:700px){.hero-grid{grid-template-columns:1fr;gap:28px;}.hero-photo{aspect-ratio:4/5;max-width:440px;width:100%;margin:0 auto;}.hero-inset{width:26%;}}
+@media(max-width:520px){
+  .hero{padding-top:36px;}
+  .badge{font-size:12px;padding:6px 12px;}
+  .cta-row .btn{flex:1 1 auto;justify-content:center;padding:11px 16px;}
+  .page-sec{padding-top:56px;}
+  .proj-entry .pe-num{display:none;}
+  .pe-tag{font-size:10px;}
+  .proj-entry h3,.setup-body h3{font-size:18px;}
+  .contact-panel{padding:24px 18px;border-radius:20px;}
+}
+@media(max-width:640px){.c-item{flex-direction:column;align-items:flex-start;gap:3px;overflow-wrap:normal;word-break:normal;}.ci-k{width:auto;}}
+@media(max-width:360px){.stat-strip{grid-template-columns:1fr;}}
+</style>
 <!-- seo -->
 <meta name="google-site-verification" content="lV_s7TXQlTaIkRPj2FiVRTj7IpzfnzxlhCkj7Y_F9A8" />
 <link rel="canonical" href="https://tahir-sajjad-portfolio.vercel.app/">
@@ -597,9 +636,9 @@ body::after{opacity:.95;-webkit-mask-image:radial-gradient(circle 250px at var(-
 <section id="research" class="wrap page-sec">
   <span class="sec-label">Research</span>
   <h2 class="sec-head">Build the device, then measure it</h2>
-  <p class="sec-dek" style="max-width:700px;">Each project below started with films or devices I helped make and ended with characterizing them. The common question is how structure, and in a device its interfaces, controls the electrical and optical response. Each project opens in a new tab.</p>
+  <p class="sec-dek" style="max-width:700px;">Each project below started with films or devices I helped make and ended with characterizing them. The common question is how structure, and in a device its interfaces, controls the electrical and optical response.</p>
   <div style="display:flex;flex-direction:column;gap:16px;">
-    <a class="proj-entry" href="proj-polymer.html" target="_blank" rel="noopener">
+    <a class="proj-entry" href="proj-polymer.html">
       <div class="pe-num">01</div>
       <div class="pe-body">
         <span class="pe-tag">RESEARCH ASSISTANT · FMOD LAB, LUMS · 2024–2026 · ACS APPLIED MATERIALS &amp; INTERFACES 2025</span>
@@ -611,9 +650,9 @@ body::after{opacity:.95;-webkit-mask-image:radial-gradient(circle 250px at var(-
           <span class="pe-stat">Published ACS AMI 2025</span>
         </div>
       </div>
-      <div class="pe-arrow">&#8599;</div>
+      <div class="pe-arrow">&#8594;</div>
     </a>
-    <a class="proj-entry" href="proj-mbi.html" target="_blank" rel="noopener">
+    <a class="proj-entry" href="proj-mbi.html">
       <div class="pe-num">02</div>
       <div class="pe-body">
         <span class="pe-tag">M.S. THESIS · FMOD LAB, LUMS · JUN 2023–MAY 2024 · ADV. ENG. MATER. 2025</span>
@@ -625,9 +664,9 @@ body::after{opacity:.95;-webkit-mask-image:radial-gradient(circle 250px at var(-
           <span class="pe-stat">Published Adv. Eng. Mater. 2025</span>
         </div>
       </div>
-      <div class="pe-arrow">&#8599;</div>
+      <div class="pe-arrow">&#8594;</div>
     </a>
-    <a class="proj-entry" href="proj-mgo.html" target="_blank" rel="noopener">
+    <a class="proj-entry" href="proj-mgo.html">
       <div class="pe-num">03</div>
       <div class="pe-body">
         <span class="pe-tag">B.S. THESIS · CASP–GCU LAHORE · JUL 2021–JUN 2022</span>
@@ -639,7 +678,7 @@ body::after{opacity:.95;-webkit-mask-image:radial-gradient(circle 250px at var(-
           <span class="pe-stat">B.S. Thesis, UMT 2022</span>
         </div>
       </div>
-      <div class="pe-arrow">&#8599;</div>
+      <div class="pe-arrow">&#8594;</div>
     </a>
   </div>
 
@@ -668,7 +707,7 @@ body::after{opacity:.95;-webkit-mask-image:radial-gradient(circle 250px at var(-
   <span class="sec-label">Experimental Setup</span>
   <h2 class="sec-head">One lab, one rig, two projects</h2>
   <p class="sec-dek" style="max-width:700px;margin-bottom:26px;">The Research Assistant (polymer photodetector) and M.S. thesis (MA<sub>3</sub>Bi<sub>2</sub>I<sub>9</sub> perovskite) projects were fabricated and measured on the same equipment at the FMOD Lab, LUMS.</p>
-  <a class="setup-card" href="setup.html" target="_blank" rel="noopener">
+  <a class="setup-card" href="setup.html">
     <div class="setup-thumbs">
       <img src="thumb-spin.jpg" width="480" height="360" loading="lazy" alt="Spin coater used to deposit the oxide and active layers">
       <img src="thumb-devices.jpg" width="480" height="360" loading="lazy" alt="Finished photodetectors with evaporated contacts">
@@ -678,9 +717,9 @@ body::after{opacity:.95;-webkit-mask-image:radial-gradient(circle 250px at var(-
       <div>
         <span class="pe-tag">SAMPLE PREPARATION · DEVICES · PHOTOCURRENT MEASUREMENT</span>
         <h3>Inside the FMOD Lab: the full photo tour</h3>
-        <p>Spin coating and substrate cleaning, the finished films and devices, and the shared lamp-and-chopper photocurrent rig, shown once and grouped by function. Opens in a new tab.</p>
+        <p>Spin coating and substrate cleaning, the finished films and devices, and the shared lamp-and-chopper photocurrent rig, shown once and grouped by function.</p>
       </div>
-      <div class="pe-arrow">&#8599;</div>
+      <div class="pe-arrow">&#8594;</div>
     </div>
   </a>
 </section>
@@ -833,7 +872,7 @@ body::after{opacity:.95;-webkit-mask-image:radial-gradient(circle 250px at var(-
 (function(){
   var box=document.getElementById('pslider');if(!box||!window.fetch)return;
   var track=document.getElementById('psTrack'),count=document.getElementById('psCount'),stamp=document.getElementById('psStamp'),bar=document.getElementById('psBar');
-  var STEP=5500,n=0,i=0,timer=null,held=false,seen=true,still=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var STEP=3000,n=0,i=0,timer=null,held=false,seen=true,still=matchMedia('(prefers-reduced-motion:reduce)').matches;
   box.style.setProperty('--ps-t',STEP+'ms');
   function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x)e.textContent=x;return e;}
   function day(s){var d=new Date(s);return isNaN(d)?s:d.toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric',timeZone:'UTC'});}
@@ -874,6 +913,28 @@ body::after{opacity:.95;-webkit-mask-image:radial-gradient(circle 250px at var(-
   addEventListener('pointermove',function(e){x=e.clientX;y=e.clientY;
     if(!q){q=true;requestAnimationFrame(function(){q=false;r.style.setProperty('--mx',x+'px');r.style.setProperty('--my',y+'px');});}
   },{passive:true});
+})();
+</script>
+<script>
+(function(){
+  /* remember where the visitor was before opening a project, and put them back there on return */
+  var KEY='homeScrollY';
+  document.addEventListener('click',function(e){
+    var a=e.target.closest&&e.target.closest('a[href]');if(!a)return;
+    var h=a.getAttribute('href');
+    if(/^(proj-[a-z]+|setup)\.html$/.test(h)){try{sessionStorage.setItem(KEY,String(Math.round(scrollY)));}catch(x){}}
+  });
+  function restore(){
+    var y=null;try{y=sessionStorage.getItem(KEY);}catch(x){}
+    var nav=performance.getEntriesByType&&performance.getEntriesByType('navigation')[0];
+    if(y===null||!nav||nav.type!=='back_forward')return;
+    var r=document.documentElement,old=r.style.scrollBehavior;r.style.scrollBehavior='auto';
+    window.scrollTo(0,+y);requestAnimationFrame(function(){window.scrollTo(0,+y);r.style.scrollBehavior=old;});
+    try{sessionStorage.removeItem(KEY);}catch(x){}
+  }
+  if('scrollRestoration' in history)history.scrollRestoration='manual';
+  window.addEventListener('pageshow',function(e){if(e.persisted){var y=null;try{y=sessionStorage.getItem(KEY);}catch(x){}if(y!==null){window.scrollTo(0,+y);try{sessionStorage.removeItem(KEY);}catch(x){}}}});
+  if(document.readyState==='complete')restore();else window.addEventListener('load',restore);
 })();
 </script>
 </body></html>

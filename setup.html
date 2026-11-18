@@ -141,6 +141,28 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);margin-top:48px;}
 
 :focus-visible{outline:2px solid var(--teal);outline-offset:2px;}
 </style>
+<style>
+/* ── responsive polish: every screen size ── */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;}
+img,svg,video{max-width:100%;}
+/* large monitors, LED screens and TVs: scale the whole layout up */
+@media(min-width:1700px){html{zoom:1.12;}}
+@media(min-width:2200px){html{zoom:1.35;}}
+@media(min-width:3000px){html{zoom:1.8;}}
+/* touch screens: no pointer-following light (saves battery) */
+@media(hover:none){body::after{display:none;}}
+/* menu stays scrollable on short / landscape phones */
+.mobile-menu-panel{max-height:calc(100vh - 92px);max-height:calc(100dvh - 92px);overflow-y:auto;-webkit-overflow-scrolling:touch;}
+@media(max-width:520px){.wrap{padding:0 16px;}.back-link{margin-bottom:24px;}}
+@media(max-width:380px){.brand{font-size:14.5px;gap:8px;}.brand-mark{width:28px;height:28px;}}
+/* floating back button on project pages */
+.float-back{position:fixed;left:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;display:inline-flex;align-items:center;gap:7px;
+  padding:11px 18px;border-radius:999px;background:var(--ink);color:var(--paper);font-size:14px;font-weight:600;
+  box-shadow:0 12px 30px -12px rgba(27,36,48,.6);opacity:0;transform:translateY(14px);pointer-events:none;transition:opacity .2s,transform .2s;}
+.float-back.show{opacity:1;transform:none;pointer-events:auto;}
+.float-back:hover{background:var(--teal);}
+@media(hover:none){.doi-link{padding:9px 0 5px;}}
+</style>
 <!-- seo -->
 <link rel="canonical" href="https://tahir-sajjad-portfolio.vercel.app/setup.html">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
@@ -247,8 +269,9 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);margin-top:48px;}
   </div>
 </header>
 <main>
-<div class="wrap" style="padding-top:56px;padding-bottom:80px;">
-  <span class="sec-label">Experimental Setup</span>
+<div class="wrap" style="padding-top:40px;padding-bottom:80px;">
+  <a class="back-link" href="/#setup">&#8592; Back to home</a>
+  <span class="sec-label" style="margin-top:4px;">Experimental Setup</span>
   <h1 class="sec-head">One lab, one rig, two projects</h1>
   <p class="sec-dek" style="max-width:700px;">The Research Assistant (polymer photodetector) and M.S. thesis (MA&#8323;Bi&#8322;I&#8329; perovskite) projects were fabricated and measured on the same equipment at the FMOD Lab, LUMS. Rather than split identical equipment across two project pages, it's presented here once, by function.</p>
 
@@ -385,6 +408,18 @@ footer{padding:40px 0 56px;border-top:1px solid var(--line);margin-top:48px;}
   addEventListener('pointermove',function(e){x=e.clientX;y=e.clientY;
     if(!q){q=true;requestAnimationFrame(function(){q=false;r.style.setProperty('--mx',x+'px');r.style.setProperty('--my',y+'px');});}
   },{passive:true});
+})();
+</script>
+<a class="float-back" id="floatBack" href="/#setup" aria-label="Back to the homepage">&#8592; Back</a>
+<script>
+(function(){
+  /* back links return to the exact spot on the homepage when the visitor came from it */
+  function fromHome(){try{var r=new URL(document.referrer);return r.origin===location.origin&&(r.pathname==='/'||r.pathname==='/index.html');}catch(e){return false;}}
+  document.querySelectorAll('.back-link,.float-back').forEach(function(a){
+    a.addEventListener('click',function(e){if(fromHome()&&history.length>1){e.preventDefault();history.back();}});
+  });
+  var fb=document.getElementById('floatBack'),top=document.querySelector('.back-link');
+  if(fb&&top&&'IntersectionObserver' in window)new IntersectionObserver(function(en){fb.classList.toggle('show',!en[0].isIntersecting);}).observe(top);
 })();
 </script>
 </body>
